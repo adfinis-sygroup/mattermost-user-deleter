@@ -17,9 +17,9 @@ setup(
         "console_scripts": ["mattermost-user-deleter=mattermost_user_deleter.app:main"]
     },
     data_files=[
-        ('/usr/lib/systemd/system',
-            ['config/mattermost-user-deleter.service'],
-            ['config/mattermost-user-deleter.timer']
-        ),
+        ('/usr/lib/systemd/system',[
+            'config/mattermost-user-deleter.service',
+            'config/mattermost-user-deleter.timer'
+        ])
     ]
 )
