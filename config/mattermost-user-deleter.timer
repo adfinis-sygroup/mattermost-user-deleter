@@ -1,0 +1,9 @@
+[Unit]
+Description=Run nextcloud user deleter script
+
+[Timer]
+Unit=nextcloud-user-deleter.service
+OnCalendar=*-*-* 4:00:00
+
+[Install]
+WantedBy=timers.target

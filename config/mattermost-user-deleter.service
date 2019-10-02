@@ -1,0 +1,11 @@
+[Unit]
+Description=Mattermost permanent user deleter
+
+[Service]
+Type=oneshot
+User=apache
+Group=apache
+ExecStart=/usr/bin/mattermost-user-deleter --mattermost-root=/opt/mattermost --config=/opt/mattermost/config/config.json
+
+[Install]
+WantedBy=multi-user.target
