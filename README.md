@@ -45,3 +45,7 @@ usage: mattermost-user-deleter [-h] --config CONFIG --mattermost-root
 - `--mattermost-root` path to Mattermost install root (normally `/opt/mattermost`)
 - `--debug` is a flag to display debug output
 - `--dry-run` if this flag is specified, only show what the script would delete instead of actually deleting the users
+
+
+## License
+Code released under the GNU Affero General Public License v3.0.
