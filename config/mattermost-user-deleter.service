@@ -1,5 +1,6 @@
 [Unit]
 Description=Mattermost permanent user deleter
+Documentation=https://github.com/adfinis-sygroup/mattermost-user-deleter
 
 [Service]
 Type=oneshot
