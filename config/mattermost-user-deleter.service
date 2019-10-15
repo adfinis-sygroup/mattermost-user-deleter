@@ -1,11 +1,18 @@
 [Unit]
 Description=Mattermost permanent user deleter
+Documentation=https://github.com/adfinis-sygroup/mattermost-user-deleter
+After=mattermost.service
+Wants=mattermost.service
+
 
 [Service]
 Type=oneshot
-User=apache
-Group=apache
-ExecStart=/usr/bin/mattermost-user-deleter --mattermost-root=/opt/mattermost --config=/opt/mattermost/config/config.json
+User=mattermost
+Group=mattermost
+Environment="MATTERMOST_ROOT=/opt/mattermost"
+Environment="MATTERMOST_CONFIG=/opt/mattermost/config/config.json"
+ExecStart=/usr/bin/mattermost-user-deleter --mattermost-root=${MATTERMOST_ROOT} \
+                                           --config=${MATTERMOST_CONFIG}
 
 [Install]
 WantedBy=multi-user.target
