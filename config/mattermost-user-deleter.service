@@ -6,7 +6,10 @@ Documentation=https://github.com/adfinis-sygroup/mattermost-user-deleter
 Type=oneshot
 User=mattermost
 Group=mattermost
-ExecStart=/usr/bin/mattermost-user-deleter --mattermost-root=/opt/mattermost --config=/opt/mattermost/config/config.json
+Environment="MATTERMOST_ROOT=/opt/mattermost"
+Environment="MATTERMOST_CONFIG=/opt/mattermost/config/config.json"
+ExecStart=/usr/bin/mattermost-user-deleter --mattermost-root=${MATTERMOST_ROOT} \
+                                           --config=${MATTERMOST_CONFIG}
 
 [Install]
 WantedBy=multi-user.target
