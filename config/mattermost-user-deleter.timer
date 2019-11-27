@@ -1,8 +1,8 @@
 [Unit]
-Description=Run nextcloud user deleter script
+Description=Run mattermost user deleter script
 
 [Timer]
-Unit=nextcloud-user-deleter.service
+Unit=mattermost-user-deleter.service
 OnCalendar=*-*-* 4:00:00
 
 [Install]
